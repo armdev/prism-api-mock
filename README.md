@@ -79,7 +79,7 @@ prism-api-mock/
                    properties:
                      message:
                        type: string
-                       example: "Hello APIOps world"
+                       example: "Hello, APIOps World!"
      /payment:
        post:
          summary: Process a payment
@@ -137,7 +137,7 @@ You can test the mock API using `curl` or an API client like Postman.
 
   ```json
   {
-    "message": "Hello APIOps world"
+    "message": "Hello, APIOps World!"
   }
   ```
 
