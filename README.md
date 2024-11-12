@@ -163,8 +163,8 @@ To stop the containers, use:
 ```bash
 docker-compose down
 ```
-```
 ### Alternatively
+
 ```bash
 ./run.sh
 ./stop.sh
