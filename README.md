@@ -111,11 +111,9 @@ paths:
                     example: "txn_987654321"
 ```
 
----
 
-### Updated `README.md`
 
-Here's the updated `README.md` with details about the new `POST` API:
+
 
 ```markdown
 # Prism API Mocking Service
