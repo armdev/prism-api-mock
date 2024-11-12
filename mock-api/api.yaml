@@ -17,4 +17,34 @@ paths:
                   message:
                     type: string
                     example: "Hello, APIOps World!"
-
+  /payment:
+    post:
+      summary: Process a payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountId:
+                  type: string
+                  example: "123456789"
+                amount:
+                  type: number
+                  format: float
+                  example: 150.75
+      responses:
+        '200':
+          description: Payment processed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  transactionId:
+                    type: string
+                    example: "txn_987654321"
