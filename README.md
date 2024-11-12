@@ -1,119 +1,4 @@
-```markdown
-# Prism API Mocking Service
-
-This project sets up a simple API mocking service using [Prism](https://github.com/stoplightio/prism) with Docker Compose. Prism allows you to mock an API based on an OpenAPI specification, making it easy to simulate and test API responses.
-
-## Getting Started
-
-Follow these instructions to run the Prism API mocking service.
-
-### Prerequisites
-
-- **Docker**: Make sure Docker is installed on your machine.
-- **Docker Compose**: Ensure Docker Compose is available for managing the containers.
-
-### Setup and Run
-
-1. **Clone this repository** or create the necessary files as outlined below.
-2. **Build and run the service** using Docker Compose.
-
-### Folder Structure
-
-```
-prism-api-mock/
-├── docker-compose.yml
-└── mock-api/
-    └── api.yaml
-```
-
-### Instructions
-
-1. **Create the project directory** and navigate to it:
-   ```bash
-   mkdir prism-api-mock
-   cd prism-api-mock
-   ```
-
-2. **Create the `docker-compose.yml` file**:
-   ```yaml
-   version: '3.8'
-
-   services:
-     prism:
-       image: stoplight/prism:latest
-       container_name: prism-mock-api
-       ports:
-         - "4010:4010"  # Expose the mock API on port 4010
-       volumes:
-         - ./mock-api:/mock-api  # Mount the directory with API specification
-       command: "mock -h 0.0.0.0 /mock-api/api.yaml"  # Specify the path to the OpenAPI spec
-   ```
-
-3. **Create the OpenAPI specification**:
-
-   Inside the `prism-api-mock` directory, create a folder named `mock-api` and add an `api.yaml` file:
-
-   ```bash
-   mkdir mock-api
-   ```
-
-   **Add the following content to `mock-api/api.yaml`:**
-```yaml
-openapi: 3.0.0
-info:
-  title: Simple Mock API
-  version: 1.0.0
-paths:
-  /greet:
-    get:
-      summary: Greets the user
-      responses:
-        '200':
-          description: A friendly greeting message
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: "Hello, World!"
-  /payment:
-    post:
-      summary: Process a payment
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                accountId:
-                  type: string
-                  example: "123456789"
-                amount:
-                  type: number
-                  format: float
-                  example: 150.75
-      responses:
-        '200':
-          description: Payment processed successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: string
-                    example: "success"
-                  transactionId:
-                    type: string
-                    example: "txn_987654321"
-```
-
-
-
-
+Here's the full `README.md` with your requested changes:
 
 ```markdown
 # Prism API Mocking Service
@@ -195,7 +80,7 @@ prism-api-mock/
                    properties:
                      message:
                        type: string
-                       example: "Hello, APIOps World!"
+                       example: "Hello APIOps world"
      /payment:
        post:
          summary: Process a payment
@@ -253,7 +138,7 @@ You can test the mock API using `curl` or an API client like Postman.
 
   ```json
   {
-    "message": "Hello, World!"
+    "message": "Hello APIOps world"
   }
   ```
 
@@ -286,6 +171,7 @@ docker-compose down
 ./stop.sh
 ./clean.sh
 ```
+
 ## Customization
 
 - You can add more endpoints and customize the API behavior by editing the `api.yaml` file in the `mock-api` directory.
