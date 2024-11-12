@@ -1,4 +1,3 @@
-Here's the full `README.md` with your requested changes:
 
 ```markdown
 # Prism API Mocking Service
