@@ -1,0 +1,10 @@
+services:
+  prism:
+    image: stoplight/prism:latest
+    container_name: prism-mock-api
+    ports:
+      - "4010:4010"  # Expose the mock API on port 4010
+    volumes:
+      - ./mock-api:/mock-api  # Mount the directory with API specification
+    command: "mock -h 0.0.0.0 /mock-api/api.yaml"  # Specify the path to the OpenAPI spec
+

@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: Simple Mock API
+  version: 1.0.0
+paths:
+  /greet:
+    get:
+      summary: Greets the user
+      responses:
+        '200':
+          description: A friendly greeting message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Hello, APIOps World!"
+
