@@ -195,7 +195,7 @@ prism-api-mock/
                    properties:
                      message:
                        type: string
-                       example: "Hello, World!"
+                       example: "Hello, APIOps World!"
      /payment:
        post:
          summary: Process a payment
